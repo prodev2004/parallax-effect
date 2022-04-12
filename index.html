@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Parallax Effect</title>
+</head>
+<body>
+    <section>
+        <div class="bcg">
+            <h1>ALB Dev</h1>
+            <img src="images/sky.png" class="sky">
+            <img src="images/city.png" class="city">
+        </div>
+    </section>
+    <section>
+        <div class="left">
+            <h1>Subscribe</h1>
+            <p>I upload videos related to web development everyday. Until now I have 250+ videos on my channel and many more to come.</p>
+            <br>
+            <p>So if you don't want to miss any of these cool videos I create make sure to subscribe and turn on bell notification</p>
+            <button>Subscribe!</button>
+        </div>
+        <div class="right">
+            <img src="images/main-image.jpg" alt="">
+        </div>
+    </section>
+
+    <script>
+        const sky = document.querySelector('.sky')
+        const city = document.querySelector('.city')
+        const text = document.querySelector('.bcg h1')
+
+        window.addEventListener('scroll', () => {
+            
+            sky.style.transform = `translateY(${window.scrollY}px)`;
+            text.style.transform = `translateY(${window.scrollY * 2}px)`;
+            city.style.transform = `translateY(${window.scrollY / 1.5}px)`;
+        })
+    </script>
+</body>
+</html>
